@@ -36,19 +36,50 @@ app.post('/signup', (req, res) => {
   // Your signup logic here
   const {email, password}= req.body;
 
-  // const existingUser = USERS.find(user => user.email === email);
+  var existingUser = USERS.find(user => user.email === email);
   
-  // if (!existingUser) {
-  //   USERS.push({ email, password });
-  // }
-  console.log(req.body);
+  if (!existingUser) {
+    USERS.push({ email, password });
+  }
+  console.log(USERS);
 
   res.send(200);
   
   
 });
 
-// app.post('/login', function(req, res) {
+app.post('/login', function(req, res) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Max-Age", "1800");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
+  const {email, password}= req.body;
+  if(email && password){
+    var existingUser = USERS.find(user => user.email === email)
+    if(existingUser){
+      if(existingUser.password === password){
+        
+        var token = Date.now()
+        res.status(200).json({ message: 'Login successful', token });
+        console.log("Login successful");
+      }
+      else {
+        console.log("incorrect password");
+        return res.status(401).json({ message: 'Incorrect password' });
+        
+      }
+    }
+    else{
+      console.log("User not found");
+    return res.status(401).json({ message: 'User not found' });
+
+    }
+  }
+  else {
+    console.log("Enter Details");
+    return res.status(401).json({ message: 'Details not provided' });
+  }
   // Add logic to decode body
   // body should have email and password
 
@@ -61,8 +92,8 @@ app.post('/signup', (req, res) => {
   // If the password is not the same, return back 401 status code to the client
 
 
-//   res.send('Hello World from route 2!')
-// })
+  // res.send('Hello World from route 2!')
+})
 
 // app.get('/questions', function(req, res) {
 

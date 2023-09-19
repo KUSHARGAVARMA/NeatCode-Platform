@@ -1,0 +1,68 @@
+/* Styling for the sign-up card */
+.login-wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for the title */
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+   /* Style for input fields */
+   input[type="email"],
+   input[type="password"] {
+     width: 95%;
+     padding: 10px;
+     margin-bottom: 10px;
+     border: 1px solid #ccc;
+     border-radius: 3px;
+     font-size: 16px;
+   }
+      /* Style for the button */
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      /* Style for the "Already a user?" message */
+      h6 {
+        text-align: center;
+        color: #333;
+        margin-top: 10px;
+      }
+      
+      /* Style for the Log-in button inside the Link component */
+      Link button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #ccc;
+        color: #333;
+        border: none;
+        border-radius: 3px;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none; /* Remove underlines from links */
+        cursor: pointer;
+      }
+      
+      /* Style for the Log-in button on hover*/
+      Link button:hover {
+        background-color: #555;
+        color: #fff;
+      } 
+
+   
+ 

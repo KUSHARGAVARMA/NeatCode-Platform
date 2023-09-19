@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios'; // Import Axios
+import { Link } from 'react-router-dom';
+import './signup.css';
 
-import '../components/signup.css';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -17,7 +18,7 @@ const Signup = () => {
     });
   };
 
-  const handleLogin = () => {
+  const handleSignup = () => {
     // Create a JSON object from the form data
     const loginData = {
       email: formData.email,
@@ -36,6 +37,8 @@ const Signup = () => {
         console.error('There was a problem with the Axios request:', error);
       });
   };
+
+ 
 
   return (
     <>
@@ -59,10 +62,15 @@ const Signup = () => {
           value={formData.password}
           onChange={handleInputChange}
         />
-        <button onClick={handleLogin}>Login</button>
+        <br></br>
+        <button onClick={handleSignup}>Sign-Up</button>
+        <h6>Already a user ?</h6>
+        <Link to ="/login"><button >Log-in</button></Link>
       </div>
     </>
   );
 };
 
 export default Signup;
+
+
