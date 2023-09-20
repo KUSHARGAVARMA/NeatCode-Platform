@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios'; // Import Axios
 import { Link } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import './signup.css';
 
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -32,6 +34,14 @@ const Signup = () => {
       .then((response) => {
         // Handle the response data (e.g., authentication success/failure)
         console.log(response.data);
+
+        if (response.data) {
+          // Redirect to the login page
+          navigate('/login');
+        }
+
+
+
       })
       .catch((error) => {
         console.error('There was a problem with the Axios request:', error);

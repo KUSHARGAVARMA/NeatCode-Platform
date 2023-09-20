@@ -95,11 +95,16 @@ app.post('/login', function(req, res) {
   // res.send('Hello World from route 2!')
 })
 
-// app.get('/questions', function(req, res) {
+app.get('/questions', function(req, res) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Max-Age", "1800");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS");
 
-  //return the user all the questions in the QUESTIONS array
-  // res.send("Hello World from route 3!")
-// })
+  // return the user all the questions in the QUESTIONS array
+  return res.json(QUESTIONS);
+})
 
 // app.get("/submissions", function(req, res) {
    // return the users submissions for this problem
