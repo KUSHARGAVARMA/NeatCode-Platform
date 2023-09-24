@@ -1,0 +1,39 @@
+/* Navbar.css */
+.navbar {
+    display: flex;
+    flex-direction:row-reverse; 
+    /* justify-content: center; Distribute items evenly along the row */
+    align-items: center; /* Vertically center items */
+    background-color: #007bff;/* Optional: Add a background color */
+    padding: 10px; /* Optional: Add padding for spacing */
+    
+  }
+  .center {
+    margin: 0 auto; /* Center align the .center div horizontally */
+  }
+  
+  .nav-items {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Add spacing between items */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-item {
+    /* Optional styling for individual items */
+  }
+  
+  .nav-item a {
+    text-decoration: none;
+    color: rgb(242, 248, 253);
+    border-bottom: 3px solid transparent;
+    transition: transform 0.1s ease; /* Add smooth transition */
+  }
+  
+  .nav-item a:hover {
+     /* Enlarge on hover */
+    
+    border-bottom: 3px solid rgb(229, 228, 235);
+   
+  }
