@@ -10,29 +10,22 @@ const Navbar = () => {
         
             <ul className='nav-items'>
                 <li className='nav-item'> 
+                <Link to='/'>NeatCode</Link>
+                </li>
+                <li className='nav-item'> 
                 <Link to='/login'>Login</Link>
                 </li>
                 <li className='nav-item'> 
                 <Link to='/'>Sign-Up</Link>
                 </li>
-            </ul>
-        </div>
-        <div className='center'>
-            <ul className='nav-items'>
                 <li className='nav-item'> 
-                <Link to='/'><h3>NeatCode</h3></Link>
+                <Link to='/solve'>All Problems</Link>
                 </li>
             </ul>
         </div>
-        <div className='right'>
-            <ul className='nav-items'>
-                <li className='nav-item'> 
-                <Link to='/solve'>Solve</Link>
-                </li>
-            </ul>
-        </div>
-      
     </div>
+    
+
   );
 }
 

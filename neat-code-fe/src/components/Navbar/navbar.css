@@ -2,14 +2,12 @@
 .navbar {
     display: flex;
     flex-direction:row-reverse; 
-    /* justify-content: center; Distribute items evenly along the row */
+    justify-content: center;
     align-items: center; /* Vertically center items */
-    background-color: #007bff;/* Optional: Add a background color */
-    padding: 10px; /* Optional: Add padding for spacing */
+   /* Optional: Add a background color */
+   padding: 10px; /* Optional: Add padding for spacing */
+   border-bottom:  2px solid #333;
     
-  }
-  .center {
-    margin: 0 auto; /* Center align the .center div horizontally */
   }
   
   .nav-items {
@@ -26,7 +24,7 @@
   
   .nav-item a {
     text-decoration: none;
-    color: rgb(242, 248, 253);
+    color: rgb(3, 16, 27);
     border-bottom: 3px solid transparent;
     transition: transform 0.1s ease; /* Add smooth transition */
   }

@@ -1,37 +1,52 @@
 
 import useFetchData from "../../hooks/usefetch";
+import './displayProblems.css';
+import { Link } from "react-router-dom";
 const DisplayProblems=()=>{
 
 const {data, isLoading } = useFetchData('http://localhost:3001/questions',[]);
 console.log(data);
-return (
- <div>
- {data.map((item, index) => (
-   <div key={index}>
-     <h2>{item.title}</h2>
-     <p>Description: {item.description}</p>
-     <h3>Test Cases</h3>
-     <ul>
-       {item.testCases.map((testCase, idx) => (
-         <li key={idx}>
-           Input: {JSON.stringify(testCase.input)}, 
-           Expected Output: {JSON.stringify(testCase.output)}
-         </li>
-       ))}
-     </ul>
-   </div>
- ))}
-</div>
 
- 
-
-
-
-
-
-
-  );
-
+const getDifficultyColor = (difficulty) => {
+  switch (difficulty) {
+    case 'easy':
+      return 'green';
+    case 'medium':
+      return 'yellow';
+    case 'hard':
+      return 'red';
+    default:
+      return 'black'; // Default color if difficulty is not recognized
+  }
 };
+
+
+  return (
+    <div className="container">
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Difficulty</th>
+        </tr>
+      </thead>
+      <tbody>
+        {data.map((item, index) => (
+          <tr key={index}>
+            <td>
+              <Link to={`/problems/${item.id}`}>
+                {item.title}
+              </Link>
+            </td>
+            <td>{item.description}</td>
+            <td style={{ color: getDifficultyColor(item.difficulty) }}>{item.difficulty}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    </div>
+  );
+}
 
 export default DisplayProblems;

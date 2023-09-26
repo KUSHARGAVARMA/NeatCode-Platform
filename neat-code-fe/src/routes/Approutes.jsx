@@ -3,7 +3,7 @@ import Login from '../pages/login/Login';
 import Signup from '../pages/sign-up/Signup';
 import Problems from '../pages/all-problems/Problems';
 import Solve from '../pages/solve-problem/Solve';
-
+import ListProblems from '../pages/list-problems/ListProblems';
 const AppRoutes = () => {
 
     return (
@@ -12,6 +12,7 @@ const AppRoutes = () => {
             {/* <Signup/> */}
             <Routes>
               <Route path="/" element={<Signup />}></Route>
+              <Route path="/problems/:id" element={<ListProblems />} />
               <Route path="/login" element={<Login />}></Route>
               <Route path= "/problems/all" element={<Problems/>}></Route>
               <Route path= "/solve" element={<Solve/>}></Route>
